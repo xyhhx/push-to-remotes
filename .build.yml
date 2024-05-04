@@ -1,0 +1,14 @@
+---
+image: alpine/edge
+packages:
+  - git
+sources:
+  - git@git.sr.ht:~xyhhx/push-to-remotes
+secrets:
+  - 27de3dca-b6bf-4d9f-9e3a-1d388188926b
+environment:
+  github_url: git@github.com:xyhhx/push-to-remotes
+tasks:
+  github: |
+    git push --all "${github_url}"
+
