@@ -9,6 +9,5 @@ secrets:
 environment:
   github_url: git@github.com:xyhhx/push-to-remotes
 tasks:
-  github: |
-    git push --all "${github_url}"
+  - github: git push --all "${github_url}"
 
