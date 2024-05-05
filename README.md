@@ -28,4 +28,3 @@ This build process uses personal access tokens instead of SSH keys. The reasonin
     - Add the UUID for your Github PAT to your `.secrets` list
     - Populate the `.environment.github_username` and `.environment.github_repo` variables
         - (The repo is off the format `user/repo` only)
-
