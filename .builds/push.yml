@@ -3,21 +3,21 @@ image: alpine/edge
 packages:
   - git
 sources:
-  - https://git.sr.ht:~xyhhx/push-to-remotes
+  - https://git.sr.ht:~xyhhx/push-mirror
 secrets:
   - d1730c0c-e282-463c-9566-b658c116805f
   - 0cae6893-81a1-4712-b0be-a7a37317c074
 environment:
-  repo_name: push-to-remotes
+  repo_name: push-mirror 
 
   github_username: xyhhx
-  github_repo: xyhhx/push-to-remotes
+  github_repo: xyhhx/srht-push-mirror
 
   codeberg_username: xyhhx
-  codeberg_repo: xyhhx/push-to-remotes
+  codeberg_repo: xyhhx/srht-push-mirror
 tasks:
   - github: |
-      set +xe
+      set +x
       cd "${repo_name}"
       github_token=$(cat ~/secrets/github_pat)
       github_url=$(printf \
@@ -27,7 +27,7 @@ tasks:
         "${github_repo}")
       git push --all "${github_url}" -f
   - codeberg: |
-      set +xe
+      set +x
       cd "${repo_name}"
       codeberg_token=$(cat ~/secrets/codeberg_pat)
       codeberg_url=$(printf \
