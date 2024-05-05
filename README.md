@@ -17,11 +17,11 @@ This build process uses personal access tokens instead of SSH keys. The reasonin
     - Give it **read and write** access to *Contents*
     - Copy the generated token, obviously
 1. Add the generated token to your sourcehut secrets dashboard
-    - Go to https://build.sr.ht/secrets
+    - Go to https://builds.sr.ht/secrets
     - Give the secret a descriptive name. I like to call it "<repo name> github PAT" (where `<repo name>` is the name of the repository you're mirroring)
     - Paste the token into the secret's value
     - Select **File** as the *Secret type*
-    - For path, choose `/run/secrets/github_pat`
+    - For path, choose `~/secrets/github_pat`
     - Just to be safe, set a mode of `600`
     - Click *Add secret*, and take note of its UUID
 1. Update the build manifest
