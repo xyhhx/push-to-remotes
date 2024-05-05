@@ -5,13 +5,14 @@ packages:
 sources:
   - https://git.sr.ht:~xyhhx/push-to-remotes
 secrets:
-  - 27de3dca-b6bf-4d9f-9e3a-1d388188926b
+  - 8d1c224a-af8d-446e-8c67-6b7b514e2d39 
 environment:
   repo_name: push-to-remotes
-  github_url: git@github.com:xyhhx/push-to-remotes.git 
+  github_username: xyhhx
+  github_repo: xyhhx/push-to-remotes
 tasks:
   - github: |
-      ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       cd "${repo_name}" 
+      github_token=$(cat /run/secrets/github_pat)
+      github_url=$(printf "https://%s:%s@github.com/%s" "${github_username}" "${github_token}" "${github_repo}")
       git push --all "${github_url}"
-
