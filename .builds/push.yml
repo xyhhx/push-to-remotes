@@ -7,7 +7,10 @@ sources:
 secrets:
   - 27de3dca-b6bf-4d9f-9e3a-1d388188926b
 environment:
-  github_url: git@github.com:xyhhx/push-to-remotes.git
+  repo_name: push-to-remotes
+  github_url: git@github.com:xyhhx/push-to-remotes.git 
 tasks:
-  - github: git push --all "${github_url}"
+  - github: |
+      cd "${repo_name}" 
+      git push --all "${github_url}"
 
