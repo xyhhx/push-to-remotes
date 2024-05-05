@@ -11,6 +11,7 @@ environment:
   github_url: git@github.com:xyhhx/push-to-remotes.git 
 tasks:
   - github: |
+      ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
       cd "${repo_name}" 
       git push --all "${github_url}"
 
