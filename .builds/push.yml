@@ -25,7 +25,7 @@ tasks:
         "${github_username}" \
         "${github_token}" \
         "${github_repo}")
-      git push --all "${github_url}"
+      git push --all "${github_url}" -f
   - codeberg: |
       set +xe
       cd "${repo_name}"
@@ -35,4 +35,4 @@ tasks:
         "${codeberg_username}" \
         "${codeberg_token}" \
         "${codeberg_repo}")
-      git push --all "${codeberg_url}"
+      git push --all "${codeberg_url}" -f
